@@ -12,4 +12,7 @@ public class MyAppConfig {
 		return new Student();
 	}
 
+	public void display() {
+		System.out.println("Hello");
+	}
 }
