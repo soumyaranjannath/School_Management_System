@@ -12,7 +12,11 @@ public class MyAppConfig {
 		return new Student();
 	}
 
-	public void display() {
+	public void display1() {
+		System.out.println("Hello");
+	}
+	
+	public void display2() {
 		System.out.println("Hello");
 	}
 }
