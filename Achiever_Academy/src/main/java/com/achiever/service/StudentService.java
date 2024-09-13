@@ -21,4 +21,14 @@ public class StudentService {
 		Student student =new Student(name,rollno,age,sClass,photo);
 		sd.saveStudent(student);
 	}
+	public Student getStudent(Integer id) {
+		return sd.getStudent(id);
+	}
+	public void updateStudent(String name,Integer rollno,Integer age,String sClass,String sPhoto) throws IOException {
+		File file= new File(sPhoto);
+		byte[] photo=Files.readAllBytes(file.toPath());
+		Student student =new Student(name,rollno,age,sClass,photo);
+		sd.updateStudent(student);
+		
+	}
 }
