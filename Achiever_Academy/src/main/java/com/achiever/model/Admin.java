@@ -1,4 +1,4 @@
-package com.achiever.entity;
+package com.achiever.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

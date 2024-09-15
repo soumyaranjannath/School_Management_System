@@ -3,7 +3,7 @@ package com.achiever.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.achiever.entity.Student;
+import com.achiever.model.Student;
 
 @Configuration
 public class MyAppConfig {
@@ -12,11 +12,4 @@ public class MyAppConfig {
 		return new Student();
 	}
 
-	public void display1() {
-		System.out.println("Hello");
-	}
-	
-	public void display2() {
-		System.out.println("Hello");
-	}
 }

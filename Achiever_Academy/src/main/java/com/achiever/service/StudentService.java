@@ -1,34 +1,25 @@
 package com.achiever.service;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-import com.achiever.dao.StudentDao;
-import com.achiever.entity.Student;
+import com.achiever.model.Student;
+import com.achiever.repository.StudentRepository;
 @Component
+@Service
 public class StudentService {
 	
 	@Autowired
-	private StudentDao sd;
+	private StudentRepository studentRepository;
 	
-	public void saveStudent(String name,Integer rollno,Integer age,String sClass,String sPhoto) throws IOException {
-		File file= new File(sPhoto);
-		byte[] photo=Files.readAllBytes(file.toPath());
-		Student student =new Student(name,rollno,age,sClass,photo);
-		sd.saveStudent(student);
+	public Student saveStudent(Student student) {
+		return studentRepository.save(student);
 	}
-	public Student getStudent(Integer id) {
-		return sd.getStudent(id);
-	}
-	public void updateStudent(String name,Integer rollno,Integer age,String sClass,String sPhoto) throws IOException {
-		File file= new File(sPhoto);
-		byte[] photo=Files.readAllBytes(file.toPath());
-		Student student =new Student(name,rollno,age,sClass,photo);
-		sd.updateStudent(student);
-		
-	}
+	 public Optional<Student> getStudentById(Integer id) {
+	        return studentRepository.findById(id);
+	    }
+
 }
