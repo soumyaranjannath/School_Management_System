@@ -1,5 +1,6 @@
 package com.achiever.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,5 +22,17 @@ public class StudentService {
 	 public Optional<Student> getStudentById(Integer id) {
 	        return studentRepository.findById(id);
 	    }
+	 public List<Student> getAllStudents(){
+		 return studentRepository.findAll();
+	 }
+	 public String deleteStudent(Integer id) {
+		 if(studentRepository.existsById(id)) {
+			 studentRepository.deleteById(id);
+			 return "Student with Id "+id+"deleted successfully";
+		 }
+		 else return "Student with Id "+id+"does not exist";
+		 
+	 }
+	 
 
 }

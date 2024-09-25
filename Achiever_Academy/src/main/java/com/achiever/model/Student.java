@@ -7,7 +7,9 @@ import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name="student")
@@ -24,7 +26,6 @@ public class Student {
 	private Integer sAge;
 	@Column(name="sclass")
 	private String sClass;
-	@Lob
-	@Column(name="sphoto",columnDefinition = "MEDIUMBLOB")
-	private byte[] photo;
+	
+	
 }
